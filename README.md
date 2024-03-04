@@ -1,4 +1,4 @@
-# laravlel-kernel
+# laravel 排程schedule
 
 有關withoutOverlapping
 實測如下(測試機docker)
@@ -66,7 +66,7 @@ $schedule->command('suppliers:test-f')->everyMinute()->withoutOverlapping();
 [2024-01-12 18:05:11] local.INFO: eee第四次的e  
 
 
-* runInBackground() 可以併發執行  
+### runInBackground() 可以併發執行  
 ex.
 ```
 for ($i = 0; $i < 2; $i += 1) {
@@ -81,5 +81,4 @@ for ($i = 0; $i < 2; $i += 1) {
 
 ### 結論
 想要最大化cpu使用率，又不想因為一支跑太久塞車跑導致cpu爆掉，可以使用  
-`->withoutOverlapping()->runInBackground();`  
-控制在固定的線程數  
+`->withoutOverlapping()->runInBackground();` 控制在固定的線程數
